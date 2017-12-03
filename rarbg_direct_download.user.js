@@ -48,24 +48,3 @@ if (location.pathname == '/torrents.php') // search page
 
 if (location.pathname.startsWith('/tv/'))
   addMutationObservers();
-
-
-
-
-function appendToPopulateTV() {
-  var torrents = document.querySelectorAll('a.tvshowClick[onclick^="populate_tv("]');
-  
-  torrents.forEach(function(item, i, torrents) {
-    item.setAttribute('onclick', item.getAttribute('onclick') + ' ' + 'linkifySizeColumn();');
-    // alert(item.onclick);
-  });
-}
-
-function _addEventListener() {
-  var torrents = document.querySelectorAll('a.tvshowClick[onclick^="populate_tv("]');
-  
-  torrents.forEach(function(item, i, torrents) {
-    item.addEventListener('click', linkifySizeColumn, true);
-    // alert(item.onclick);
-  });
-}
